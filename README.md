@@ -1,2 +1,3 @@
-*Store Project Demo
-** MIT LICENSE
+#Store Project Demo
+## A Demo Project to practice web development
+### MIT LICENSE
