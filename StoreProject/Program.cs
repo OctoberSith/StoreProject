@@ -1,2 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Let's get this project up and running");
+﻿using StoreProject;
+/// <summary>
+/// Program Logic
+/// </summary>
+bool isRunning = true;
+IStoreMenu menu = new StoreMenu();
+while (isRunning)
+{
+    menu.MenuDisplay();
+    menu.UserSelection();
+}
