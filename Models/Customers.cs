@@ -1,6 +1,13 @@
 ﻿namespace Models;
 public class Customers
 {
+    private int _custID;
+    public int CustID
+    {
+        get { return _custID; }
+        set { _custID = value; }
+    }
+    
     private string _name;
     public string Name
     {
