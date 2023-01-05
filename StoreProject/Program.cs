@@ -1,4 +1,15 @@
-﻿using StoreProject;
+﻿using Microsoft.Extensions.Configuration;
+using StoreProject;
+using DL;
+using Models;
+
+
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .Build();
+string _connectionstring = configuration.GetConnectionString("SPR");
+
 
 /// <summary>
 /// Program Logic
@@ -21,6 +32,9 @@ while (isRunning)
             break;
         case "Admin":
             menu = new AdminMenu();
+            break;
+        case "AddProduct":
+            menu = new AddProductMenu(new ProductRepository(_connectionstring));
             break;
         default:
             break;

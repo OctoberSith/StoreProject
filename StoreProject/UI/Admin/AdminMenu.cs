@@ -14,6 +14,7 @@ namespace StoreProject
             Console.WriteLine("         Press 4 to Add Product");
             Console.WriteLine("         Press 5 to Update Product");
             Console.WriteLine("         Press 6 to Delete Product");
+            Console.WriteLine("         Press 7 to Add Store");
             Console.WriteLine("         Press 0 to Exit");
             Console.WriteLine("        ======================================");
         }
@@ -31,9 +32,13 @@ namespace StoreProject
                 case "3":
                     return "UpdateProfile";
                 case "4":
-                    return "AddInventory";
+                    return "AddProduct";
                 case "5":
-                    return "UpdateInventory";
+                    return "UpdateProduct";
+                case "6":
+                    return "DeleteProduct";
+                case "7":
+                    return "AddStore";
                 default:
                     return "Exit";
             }
