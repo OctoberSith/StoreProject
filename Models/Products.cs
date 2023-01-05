@@ -38,8 +38,8 @@ public class Products
         set { _prodprice = value; }
     }
     
-    private int _prodcat;
-    public int ProdCat
+    private string _prodcat;
+    public string ProdCat
     {
         get { return _prodcat; }
         set { _prodcat = value; }
