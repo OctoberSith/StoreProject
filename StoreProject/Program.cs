@@ -34,7 +34,7 @@ while (isRunning)
             menu = new AdminMenu();
             break;
         case "AddProduct":
-            menu = new AddProductMenu(new ProductRepository(_connectionstring));
+            menu = new AddProductMenu(new ProductsRepository(_connectionstring));
             break;
         default:
             break;
