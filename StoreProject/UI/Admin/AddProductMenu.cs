@@ -42,7 +42,26 @@ public class AddProductMenu : IStoreMenu
             case "0":
                 return "Admin";
             case "1":
+                Console.Clear();
+                Console.WriteLine("Enter Name");
+                _newProduct.ProdName = Console.ReadLine();
+                Console.WriteLine("Enter Company");
+                _newProduct.ProdComp = Console.ReadLine();
+                Console.WriteLine("Enter Description");
+                _newProduct.ProdDesc = Console.ReadLine();
+                Console.WriteLine("Enter Price");
+                _newProduct.ProdPrice = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter Category");
+                _newProduct.ProdCat = Console.ReadLine();
+                Console.WriteLine("Enter StoreID");
+                _newProduct.ProdStoreID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Quantity");
+                _newInventory.Quantity = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Press Enter to Continue");
+                Console.ReadLine();
+                return "AddProductMenu";
             case "2":
+                return "Admin";
             default:
                 return "Admin";
         }       
