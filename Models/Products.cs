@@ -1,9 +1,14 @@
+using MongoDB.Driver;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
 namespace Models;
 
 public class Products
 {
-    private int _prodID;
-    public int ProdID
+    [BsonId]
+    private Guid _prodID;
+    public Guid ProdID
     {
         get { return _prodID; }
         set { _prodID = value; }
