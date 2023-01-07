@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using StoreProject;
 using DL;
+using BL;
 using Models;
 
 
@@ -34,7 +35,7 @@ while (isRunning)
             menu = new AdminMenu();
             break;
         case "AddProduct":
-            menu = new AddProductMenu(new ProductsRepository(_connectionstring));
+            menu = new AddProductMenu(new ProductsBL( new ProductsRepository(_connectionstring)));
             break;
         default:
             break;

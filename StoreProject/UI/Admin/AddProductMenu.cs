@@ -1,11 +1,12 @@
 using Models;
 using DL;
+using BL;
 namespace StoreProject;
 
 public class AddProductMenu : IStoreMenu
 {
-    private IRepository<Products> _repo;
-    public AddProductMenu(IRepository<Products> repo)
+    private IBusinessLayer<Products> _repo;
+    public AddProductMenu(IBusinessLayer<Products> repo)
     {
         _repo = repo;
     }
@@ -61,6 +62,11 @@ public class AddProductMenu : IStoreMenu
                 Console.ReadLine();
                 return "AddProductMenu";
             case "2":
+                Console.Clear();
+                Console.WriteLine("......Now Saving");
+                _repo.Add(_newProduct);
+                Console.WriteLine("Product has been Added. Press Enter to Continue");
+                Console.ReadLine();
                 return "Admin";
             default:
                 return "Admin";
