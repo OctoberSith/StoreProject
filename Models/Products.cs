@@ -1,7 +1,4 @@
-using MongoDB.Driver;
-using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-
 namespace Models;
 
 public class Products

@@ -1,9 +1,17 @@
+using MongoDB.Bson.Serialization.Attributes;
 namespace Models;
 
 public class Inventory
 {
-    private int _prodID;
-    public int ProdID
+    [BsonId]
+    private Guid _invID;
+    public Guid InvID
+    {
+        get { return _prodID; }
+        set { _prodID = value; }
+    }
+    private Guid _prodID;
+    public Guid ProdID
     {
         get { return _prodID; }
         set { _prodID = value; }

@@ -15,6 +15,7 @@ public class ProductsRepository : IRepository<Products>
         _connect = p_connect;
     }
 
+
     public Products Add(Products p_resource)
     {
         MongoClient dbclient = new MongoClient(_connect);

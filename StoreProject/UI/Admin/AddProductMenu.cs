@@ -5,10 +5,15 @@ namespace StoreProject;
 
 public class AddProductMenu : IStoreMenu
 {
-    private IBusinessLayer<Products> _repo;
-    public AddProductMenu(IBusinessLayer<Products> repo)
+    private IBusinessLayer<Products> _prepo;
+     private IBusinessLayer<Inventory> _invrepo;
+    public AddProductMenu(IBusinessLayer<Products> prepo)
     {
-        _repo = repo;
+        _prepo = prepo;
+    }
+        public AddProductMenu(IBusinessLayer<Inventory> invrepo)
+    {
+        _invrepo = invrepo;
     }
 
     private static Products _newProduct = new Products();
@@ -63,9 +68,11 @@ public class AddProductMenu : IStoreMenu
                 return "AddProductMenu";
             case "2":
                 Console.Clear();
-                Console.WriteLine("......Now Saving");
-                _repo.Add(_newProduct);
-                Console.WriteLine("Product has been Added. Press Enter to Continue");
+                Console.WriteLine("Now Saving...");
+                _prepo.Add(_newProduct);
+                //TODO:GET GUID FROM DB AND THEN PUT IN PRODUCT ID TO INSERT INTO INV REPO ADD
+                //PLACE HERE
+                Console.WriteLine("Product has been Added. Inventory is Updated Press Enter to Continue");
                 Console.ReadLine();
                 return "Admin";
             default:
