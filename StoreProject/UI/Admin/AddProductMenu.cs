@@ -48,11 +48,12 @@ public class AddProductMenu : IStoreMenu
                 Console.Clear();
 
                 //Assign GUID to IDs
-                Guid ProdID = new Guid();
-                Guid InvID = new Guid();
-                _newProduct.ProdID = ProdID;
-                _newInventory.ProdID = _newProduct.ProdID;
-                _newInventory.InvID = InvID;
+                //TODO: FIX????
+                //Implement in Repo???
+                _newProduct.ProdID = new Guid();
+                _newInventory.InvID = new Guid();
+                //TODO: FIX????
+                //_newInventory.ProdID = _newProduct.ProdID;
 
                 Console.WriteLine("Enter Name");
                 _newProduct.ProdName = Console.ReadLine();
