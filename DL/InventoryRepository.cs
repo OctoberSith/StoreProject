@@ -22,7 +22,7 @@ public class InventoryRepository : IRepository<Inventory>
         var database = dbclient.GetDatabase("StoreProject");
         var collection = database.GetCollection<BsonDocument> ("Inventory");
         var document = new BsonDocument{ 
-            {"InventoryID", p_resource.ProdID},
+            {"InventoryID", p_resource.InvID},
             {"ProductID", p_resource.ProdID},
             {"StoreID", p_resource.StoreID},
             {"Quantity", p_resource.Quantity} 

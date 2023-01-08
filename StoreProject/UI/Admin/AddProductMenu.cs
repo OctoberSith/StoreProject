@@ -7,12 +7,9 @@ public class AddProductMenu : IStoreMenu
 {
     private IBusinessLayer<Products> _prepo;
      private IBusinessLayer<Inventory> _invrepo;
-    public AddProductMenu(IBusinessLayer<Products> prepo)
+    public AddProductMenu(IBusinessLayer<Products> prepo,IBusinessLayer<Inventory> invrepo )
     {
         _prepo = prepo;
-    }
-        public AddProductMenu(IBusinessLayer<Inventory> invrepo)
-    {
         _invrepo = invrepo;
     }
 
@@ -49,6 +46,14 @@ public class AddProductMenu : IStoreMenu
                 return "Admin";
             case "1":
                 Console.Clear();
+
+                //Assign GUID to IDs
+                Guid ProdID = new Guid();
+                Guid InvID = new Guid();
+                _newProduct.ProdID = ProdID;
+                _newInventory.ProdID = _newProduct.ProdID;
+                _newInventory.InvID = InvID;
+
                 Console.WriteLine("Enter Name");
                 _newProduct.ProdName = Console.ReadLine();
                 Console.WriteLine("Enter Company");
@@ -71,8 +76,7 @@ public class AddProductMenu : IStoreMenu
                 Console.Clear();
                 Console.WriteLine("Now Saving...");
                 _prepo.Add(_newProduct);
-                //TODO:GET GUID FROM DB AND THEN PUT IN PRODUCT ID TO INSERT INTO INV REPO ADD
-                //_invrepo.Add(_newInventory);
+                _invrepo.Add(_newInventory);
                 Console.WriteLine("Product has been Added. Inventory is Updated Press Enter to Continue");
                 Console.ReadLine();
                 return "Admin";
