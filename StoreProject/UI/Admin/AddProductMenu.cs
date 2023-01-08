@@ -61,6 +61,7 @@ public class AddProductMenu : IStoreMenu
                 _newProduct.ProdCat = Console.ReadLine();
                 Console.WriteLine("Enter StoreID");
                 _newProduct.ProdStoreID = Convert.ToInt32(Console.ReadLine());
+                _newInventory.StoreID = _newProduct.ProdStoreID;
                 Console.WriteLine("Enter Quantity");
                 _newInventory.Quantity = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("Press Enter to Continue");
@@ -71,7 +72,7 @@ public class AddProductMenu : IStoreMenu
                 Console.WriteLine("Now Saving...");
                 _prepo.Add(_newProduct);
                 //TODO:GET GUID FROM DB AND THEN PUT IN PRODUCT ID TO INSERT INTO INV REPO ADD
-                //PLACE HERE
+                //_invrepo.Add(_newInventory);
                 Console.WriteLine("Product has been Added. Inventory is Updated Press Enter to Continue");
                 Console.ReadLine();
                 return "Admin";
